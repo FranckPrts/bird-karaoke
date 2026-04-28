@@ -333,6 +333,7 @@ export default function BirdKaraoke() {
   const playerBirdCanRef = useRef(null);
   const userCanRef = useRef(null);
   const resultOverlayRef = useRef(null);
+  const manualStartRequestRef = useRef(false);
   const editorSpectroRef = useRef(null);
   const editorMaskRef = useRef(null);
   const isPaintingRef = useRef(false);
@@ -414,6 +415,7 @@ export default function BirdKaraoke() {
     setIsPlaying(false);
     setRecPhase("idle");
     setResultMaskData(null);
+    manualStartRequestRef.current = false;
   };
 
   const loadRecording = useCallback(
@@ -611,6 +613,7 @@ export default function BirdKaraoke() {
         hardTimeoutTimer = null;
       }
       grantedStreamRef.current = stream;
+      manualStartRequestRef.current = false;
       setPlayerScreen("recording");
     } catch (err) {
       if (hardTimeoutTimer) window.clearTimeout(hardTimeoutTimer);
@@ -625,6 +628,11 @@ export default function BirdKaraoke() {
       setIsMicRequestInFlight(false);
     }
   }, [isMicRequestInFlight]);
+
+  const requestManualStart = useCallback(() => {
+    if (recPhase !== "listening") return;
+    manualStartRequestRef.current = true;
+  }, [recPhase]);
 
   useEffect(() => {
     if (mode !== "player" || playerScreen !== "recording") return;
@@ -667,6 +675,14 @@ export default function BirdKaraoke() {
       let started = false;
       let t0 = null;
       const preRollFrames = [];
+      const beginCapture = (now) => {
+        started = true;
+        const seededFrames = preRollFrames.slice(0, -1).map((f) => new Uint8Array(f.slice));
+        userFramesRef.current = seededFrames;
+        t0 = seededFrames.length ? preRollFrames[0].t : now;
+        manualStartRequestRef.current = false;
+        setRecPhase("recording");
+      };
       const frame = () => {
         if (stopped) return;
         analyser.getByteFrequencyData(fft);
@@ -678,12 +694,9 @@ export default function BirdKaraoke() {
           preRollFrames.push({ t: now, slice: new Uint8Array(slice) });
           if (preRollFrames.length > 10) preRollFrames.shift();
         }
-        if (!started && rms > 0.012) {
-          started = true;
-          const seededFrames = preRollFrames.slice(0, -1).map((f) => new Uint8Array(f.slice));
-          userFramesRef.current = seededFrames;
-          t0 = seededFrames.length ? preRollFrames[0].t : now;
-          setRecPhase("recording");
+        const manualRequested = manualStartRequestRef.current;
+        if (!started && (rms > 0.012 || manualRequested)) {
+          beginCapture(now);
         }
         if (started) {
           const elapsed = now - t0;
@@ -1121,6 +1134,13 @@ export default function BirdKaraoke() {
                   {recPhase === "listening" && "Listening for your first note..."}
                   {recPhase === "recording" && "Recording now..."}
                 </div>
+                {recPhase === "listening" && (
+                  <div className="actionRow">
+                    <button type="button" className="btn primary" onClick={requestManualStart}>
+                      Start Now
+                    </button>
+                  </div>
+                )}
                 <div className="spectrogramWrap">
                   <canvas ref={userCanRef} width={MASK_WIDTH} height={MASK_HEIGHT} style={{ width: "100%", height: "100%" }} />
                 </div>

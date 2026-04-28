@@ -66,7 +66,20 @@ Stricter presets put more weight on **`(1 − outsideRatio)`**, so stray energy 
 | **Spectrogram (reference)** | Decoded from the reference recording in the browser: STFT-style frames with a custom FFT and a fixed colormap, drawn to canvas (`buildBirdSpectrogram`, `drawFullSpectrogram` in `BirdKaraoke.jsx`). |
 | **Spectrogram (you)** | While recording, the Web Audio **AnalyserNode** supplies frequency bins that are painted live and accumulated into a mask for overlap scoring against the target mask. |
 | **`POST /api/editor/mask`** | Saves an updated `noteMask` for a recording back into `data/birds.json` on disk (used from Editor mode in dev). |
+| **`POST /api/editor/export`** | Builds a downloadable ZIP for a selected recording from Editor mode. Package includes `metadata.json`, `mask.txt`, and local audio when available. |
 
-Stack: **Next.js** (App Router), **React**, no extra runtime npm packages beyond the framework.
+Stack: **Next.js** (App Router), **React**, plus **JSZip** for editor package export.
+
+## Editor export package
+
+From Editor mode (`Shift+E`), open a bird recording and click **Download ZIP**.  
+The export is intended for maintainers to ingest in production.
+
+ZIP contents:
+
+- `metadata.json` - selected bird and selected recording metadata (including the current mask snapshot)
+- `mask.txt` - run-length encoded mask string
+- `audio/<filename>` - local recording file when the selected recording has a local `path`
+- `README-export.txt` - included when no local audio is available (or the local file is missing)
 
 @author: FranckPrts

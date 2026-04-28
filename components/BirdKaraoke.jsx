@@ -316,6 +316,7 @@ export default function BirdKaraoke() {
   const [isErasing, setIsErasing] = useState(false);
   const [editorMask, setEditorMask] = useState(() => createEmptyMask());
   const [isSavingMask, setIsSavingMask] = useState(false);
+  const [isExportingZip, setIsExportingZip] = useState(false);
   const [recordingAudioUrl, setRecordingAudioUrl] = useState(null);
   const [recordingInfoOpen, setRecordingInfoOpen] = useState(false);
   const [recordingTooltipBox, setRecordingTooltipBox] = useState(null);
@@ -838,6 +839,47 @@ export default function BirdKaraoke() {
     }
   };
 
+  const downloadEditorZip = async () => {
+    if (!selectedBird || !selectedRecording) return;
+    setIsExportingZip(true);
+    setError(null);
+    try {
+      const noteMask = maskToRuns(editorMask);
+      const res = await fetch("/api/editor/export", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ birdId: selectedBird.id, recordingId: selectedRecording.id, noteMask }),
+      });
+      if (!res.ok) {
+        let message = "Could not export ZIP package.";
+        try {
+          const payload = await res.json();
+          if (payload?.error) message = payload.error;
+        } catch {
+          /* ignore */
+        }
+        throw new Error(message);
+      }
+
+      const blob = await res.blob();
+      const disposition = res.headers.get("Content-Disposition") || "";
+      const filenameMatch = disposition.match(/filename="?([^"]+)"?/i);
+      const filename = filenameMatch?.[1] || `${selectedBird.id}-${selectedRecording.id}.zip`;
+      const href = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = href;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(href);
+    } catch (e) {
+      setError(e.message || "Could not export ZIP package.");
+    } finally {
+      setIsExportingZip(false);
+    }
+  };
+
   const grade = score !== null ? getGrade(score) : null;
   const hasMaskForSelectedRecording = selectedRecording?.noteMask && selectedRecording.noteMask.length > 0;
 
@@ -1249,6 +1291,9 @@ export default function BirdKaraoke() {
                   </button>
                   <button className="btn primary noteToolBtn" onClick={saveEditorMask} disabled={isSavingMask}>
                     {isSavingMask ? "Saving..." : "Save"}
+                  </button>
+                  <button className="btn secondary noteToolBtn" onClick={downloadEditorZip} disabled={isExportingZip}>
+                    {isExportingZip ? "Preparing ZIP..." : "Download ZIP"}
                   </button>
                 </div>
                 <div className="spectrogramWrap editorWrap">

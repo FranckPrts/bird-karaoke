@@ -46,3 +46,4 @@ AGENTS.md
 
 # audio (large binaries)
 *.wav
+!public/audio/**/*.wav

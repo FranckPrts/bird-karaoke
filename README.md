@@ -68,3 +68,5 @@ Stricter presets put more weight on **`(1 − outsideRatio)`**, so stray energy 
 | **`POST /api/editor/mask`** | Saves an updated `noteMask` for a recording back into `data/birds.json` on disk (used from Editor mode in dev). |
 
 Stack: **Next.js** (App Router), **React**, no extra runtime npm packages beyond the framework.
+
+@author: FranckPrts

@@ -19,10 +19,11 @@ const MASK_SIZE = MASK_WIDTH * MASK_HEIGHT;
 const USER_BIN_THRESHOLD = 72;
 
 const PLAYER_STEPS = {
-  select: "Step 1 of 4: Select a bird",
-  preview: "Step 2 of 4: Listen to the call",
-  recording: "Step 3 of 4: Record your mimic",
-  results: "Step 4 of 4: Review your score",
+  select: "Step 1 of 5: Select a bird",
+  recordingSelect: "Step 2 of 5: Choose a recording",
+  preview: "Step 3 of 5: Listen to the call",
+  recording: "Step 4 of 5: Record your mimic",
+  results: "Step 5 of 5: Review your score",
 };
 
 const SCORING_DIFFICULTY_STORAGE_KEY = "bird-karaoke-scoring-difficulty";
@@ -511,14 +512,30 @@ export default function BirdKaraoke() {
   };
 
   const choosePlayerBird = async (bird) => {
-    const recording = getPrimaryLocalRecording(bird);
-    if (!recording) {
+    const localRecordings = (bird.recordings || []).filter((recording) => Boolean(recording.path));
+    if (!localRecordings.length) {
       setError("No recording found for this bird.");
       return;
     }
+    setSelectedBirdId(bird.id);
+    setSelectedRecordingId(null);
+    setRecordingInfoOpen(false);
+    resetPlayerState();
+    if (localRecordings.length > 1) {
+      setPlayerScreen("recordingSelect");
+      return;
+    }
+    const [recording] = localRecordings;
     const ok = await loadRecording(bird, recording);
     if (!ok) return;
-    setSelectedBirdId(bird.id);
+    setSelectedRecordingId(recording.id);
+    setPlayerScreen("preview");
+  };
+
+  const choosePlayerRecording = async (recording) => {
+    if (!selectedBird) return;
+    const ok = await loadRecording(selectedBird, recording);
+    if (!ok) return;
     setSelectedRecordingId(recording.id);
     setRecordingInfoOpen(false);
     resetPlayerState();
@@ -930,6 +947,44 @@ export default function BirdKaraoke() {
               </section>
             )}
 
+            {playerScreen === "recordingSelect" && selectedBird && (
+              <section className="contentPanel">
+                <h2>Choose a recording</h2>
+                <p className="muted">Select which version of {selectedBird.name} you want to practice with.</p>
+                <div className="birdGrid">
+                  {selectedBirdLocalRecordings.map((recording, idx) => {
+                    const color = DIFFICULTY_COLORS[recording.difficulty] || DIFFICULTY_COLORS.Medium;
+                    return (
+                      <button
+                        key={recording.id}
+                        className="birdCard"
+                        disabled={loading}
+                        onClick={() => choosePlayerRecording(recording)}
+                      >
+                        <BirdSilhouette src={selectedBird.silhouette} className="birdIcon" />
+                        <div className="birdCardMeta">
+                          <div className="birdName">Recording {idx + 1}</div>
+                          <div className="birdSubRow">
+                            <span className="difficultyBadge" style={{ color, borderColor: `${color}55`, background: `${color}18` }}>
+                              {recording.difficulty}
+                            </span>
+                            <span className="bestText">{recording.source.provider || "Unknown source"}</span>
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+                <div className="backChipRow">
+                  <button type="button" className="chipBtn" onClick={() => setPlayerScreen("select")}>
+                    Back to bird list
+                  </button>
+                </div>
+                {loading && <div className="notice">Loading recording...</div>}
+                {error && <div className="notice error">{error}</div>}
+              </section>
+            )}
+
             {playerScreen === "preview" && selectedBird && selectedRecording && (
               <section className="contentPanel">
                 <div className="heroRow heroRowSplit">
@@ -973,8 +1028,12 @@ export default function BirdKaraoke() {
                   </button>
                 </div>
                 <div className="backChipRow">
-                  <button type="button" className="chipBtn" onClick={() => setPlayerScreen("select")}>
-                    Back to bird list
+                  <button
+                    type="button"
+                    className="chipBtn"
+                    onClick={() => setPlayerScreen(selectedBirdLocalRecordings.length > 1 ? "recordingSelect" : "select")}
+                  >
+                    {selectedBirdLocalRecordings.length > 1 ? "Back to recordings" : "Back to bird list"}
                   </button>
                 </div>
                 {recordingInfoOpen &&
@@ -1000,9 +1059,6 @@ export default function BirdKaraoke() {
                           About {duration.toFixed(1)} s reference audio
                           {recordingAudioUrl ? "." : " (file URL unavailable)."}
                         </p>
-                        {recordingAudioUrl && (
-                          <p className="recordingInfoMono recordingInfoTooltipUrl">{recordingAudioUrl}</p>
-                        )}
                         {selectedRecording.source.recordist && (
                           <p>
                             <span className="recordingInfoTooltipLabel">Recordist</span> {selectedRecording.source.recordist}

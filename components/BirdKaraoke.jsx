@@ -322,6 +322,10 @@ export default function BirdKaraoke() {
   const [recordingTooltipBox, setRecordingTooltipBox] = useState(null);
   const recordingInfoWrapRef = useRef(null);
   const recordingTooltipRef = useRef(null);
+  const [birdPhotoOpen, setBirdPhotoOpen] = useState(false);
+  const [birdPhotoTooltipBox, setBirdPhotoTooltipBox] = useState(null);
+  const birdPhotoWrapRef = useRef(null);
+  const birdPhotoTooltipRef = useRef(null);
 
   const acRef = useRef(null);
   const birdBufRef = useRef(null);
@@ -375,15 +379,43 @@ export default function BirdKaraoke() {
     };
   }, [recordingInfoOpen]);
 
+  useLayoutEffect(() => {
+    if (!birdPhotoOpen) return;
+    const margin = 10;
+    const updateBox = () => {
+      const anchor = birdPhotoWrapRef.current;
+      if (!anchor) return;
+      const r = anchor.getBoundingClientRect();
+      const width = Math.min(400, Math.max(280, window.innerWidth - margin * 2));
+      let left = r.right - width;
+      left = Math.max(margin, Math.min(left, window.innerWidth - width - margin));
+      const top = r.bottom + margin;
+      setBirdPhotoTooltipBox({ top, left, width });
+    };
+    updateBox();
+    window.addEventListener("resize", updateBox);
+    window.addEventListener("scroll", updateBox, true);
+    return () => {
+      window.removeEventListener("resize", updateBox);
+      window.removeEventListener("scroll", updateBox, true);
+      setBirdPhotoTooltipBox(null);
+    };
+  }, [birdPhotoOpen]);
+
   useEffect(() => {
-    if (!recordingInfoOpen) return;
+    if (!recordingInfoOpen && !birdPhotoOpen) return;
     const onPointerDown = (event) => {
       const t = event.target;
       if (recordingInfoWrapRef.current?.contains(t) || recordingTooltipRef.current?.contains(t)) return;
+      if (birdPhotoWrapRef.current?.contains(t) || birdPhotoTooltipRef.current?.contains(t)) return;
       setRecordingInfoOpen(false);
+      setBirdPhotoOpen(false);
     };
     const onKeyDown = (event) => {
-      if (event.key === "Escape") setRecordingInfoOpen(false);
+      if (event.key === "Escape") {
+        setRecordingInfoOpen(false);
+        setBirdPhotoOpen(false);
+      }
     };
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
@@ -391,7 +423,7 @@ export default function BirdKaraoke() {
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
     };
-  }, [recordingInfoOpen]);
+  }, [recordingInfoOpen, birdPhotoOpen]);
 
   useEffect(() => {
     try {
@@ -510,6 +542,7 @@ export default function BirdKaraoke() {
     setSelectedBirdId(null);
     setSelectedRecordingId(null);
     setRecordingInfoOpen(false);
+    setBirdPhotoOpen(false);
     setError(null);
     resetPlayerState();
   };
@@ -523,6 +556,7 @@ export default function BirdKaraoke() {
     setSelectedBirdId(bird.id);
     setSelectedRecordingId(null);
     setRecordingInfoOpen(false);
+    setBirdPhotoOpen(false);
     resetPlayerState();
     if (localRecordings.length > 1) {
       setPlayerScreen("recordingSelect");
@@ -541,6 +575,7 @@ export default function BirdKaraoke() {
     if (!ok) return;
     setSelectedRecordingId(recording.id);
     setRecordingInfoOpen(false);
+    setBirdPhotoOpen(false);
     resetPlayerState();
     setPlayerScreen("preview");
   };
@@ -615,6 +650,8 @@ export default function BirdKaraoke() {
       }
       grantedStreamRef.current = stream;
       manualStartRequestRef.current = false;
+      setRecordingInfoOpen(false);
+      setBirdPhotoOpen(false);
       setPlayerScreen("recording");
     } catch (err) {
       if (hardTimeoutTimer) window.clearTimeout(hardTimeoutTimer);
@@ -756,6 +793,7 @@ export default function BirdKaraoke() {
     workingMaskRef.current = Uint8Array.from(loadedMask);
     setSelectedRecordingId(recording.id);
     setRecordingInfoOpen(false);
+    setBirdPhotoOpen(false);
     setEditorScreen("edit");
   };
 
@@ -1050,16 +1088,43 @@ export default function BirdKaraoke() {
                         <h2>{selectedBird.name}</h2>
                         <p className="muted">{duration.toFixed(1)} second reference recording</p>
                       </div>
-                      <div className="recordingInfoAnchor" ref={recordingInfoWrapRef}>
-                        <button
-                          type="button"
-                          className="heroInfoBtn"
-                          aria-expanded={recordingInfoOpen}
-                          aria-haspopup="dialog"
-                          onClick={() => setRecordingInfoOpen((o) => !o)}
-                        >
-                          {recordingInfoOpen ? "Close" : "Details"}
-                        </button>
+                      <div className="heroMetaBtns">
+                        <div className="recordingInfoAnchor" ref={recordingInfoWrapRef}>
+                          <button
+                            type="button"
+                            className="heroInfoBtn"
+                            aria-expanded={recordingInfoOpen}
+                            aria-haspopup="dialog"
+                            onClick={() =>
+                              setRecordingInfoOpen((o) => {
+                                const next = !o;
+                                if (next) setBirdPhotoOpen(false);
+                                return next;
+                              })
+                            }
+                          >
+                            {recordingInfoOpen ? "Close" : "Details"}
+                          </button>
+                        </div>
+                        {selectedBird.photo ? (
+                          <div className="recordingInfoAnchor" ref={birdPhotoWrapRef}>
+                            <button
+                              type="button"
+                              className="heroInfoBtn"
+                              aria-expanded={birdPhotoOpen}
+                              aria-haspopup="dialog"
+                              onClick={() =>
+                                setBirdPhotoOpen((o) => {
+                                  const next = !o;
+                                  if (next) setRecordingInfoOpen(false);
+                                  return next;
+                                })
+                              }
+                            >
+                              {birdPhotoOpen ? "Close photo" : "Photo"}
+                            </button>
+                          </div>
+                        ) : null}
                       </div>
                     </div>
                   </div>
@@ -1086,7 +1151,11 @@ export default function BirdKaraoke() {
                   <button
                     type="button"
                     className="chipBtn"
-                    onClick={() => setPlayerScreen(selectedBirdLocalRecordings.length > 1 ? "recordingSelect" : "select")}
+                    onClick={() => {
+                      setRecordingInfoOpen(false);
+                      setBirdPhotoOpen(false);
+                      setPlayerScreen(selectedBirdLocalRecordings.length > 1 ? "recordingSelect" : "select");
+                    }}
                   >
                     {selectedBirdLocalRecordings.length > 1 ? "Back to recordings" : "Back to bird list"}
                   </button>
@@ -1156,6 +1225,53 @@ export default function BirdKaraoke() {
                       ) : (
                         <p className="muted recordingInfoTooltipNoLink">No catalog URL in source metadata.</p>
                       )}
+                    </div>,
+                    document.body,
+                  )}
+                {birdPhotoOpen &&
+                  birdPhotoTooltipBox &&
+                  selectedBird.photo &&
+                  typeof document !== "undefined" &&
+                  createPortal(
+                    <div
+                      ref={birdPhotoTooltipRef}
+                      className="recordingInfoTooltip birdPhotoTooltip"
+                      role="dialog"
+                      aria-label={`${selectedBird.name} reference photo`}
+                      style={{
+                        position: "fixed",
+                        top: birdPhotoTooltipBox.top,
+                        left: birdPhotoTooltipBox.left,
+                        width: birdPhotoTooltipBox.width,
+                        zIndex: 4000,
+                      }}
+                    >
+                      <div className="recordingInfoTooltipBody birdPhotoTooltipBody">
+                        <p className="recordingInfoTooltipTitle">{selectedBird.name}</p>
+                        <div className="recordingInfoTooltipPhotoWrap">
+                          {/* eslint-disable-next-line @next/next/no-img-element -- local static JPEGs from Bootcamp PDF */}
+                          <img
+                            src={selectedBird.photo}
+                            alt=""
+                            className="recordingInfoTooltipPhoto birdPhotoTooltipImg"
+                            width={360}
+                            height={225}
+                          />
+                          <p className="recordingInfoTooltipPhotoCredit muted">
+                            Credit{" "}
+                            <a
+                              href="https://docs.google.com/presentation/d/1ZeZou4qPEXtRB6A01rx-dHtW2z6fzEZelEPBwjhsxXc/edit?slide=id.p#slide=id.p"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="muted"
+                              style={{ fontSize: "0.72rem", textDecoration: "underline" }}
+                            >
+                              course handout
+                            </a>
+                            .
+                          </p>
+                        </div>
+                      </div>
                     </div>,
                     document.body,
                   )}

@@ -293,6 +293,14 @@ a {
   gap: 12px;
 }
 
+.heroMetaBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
 .heroInfoBtn {
   flex-shrink: 0;
   padding: 8px 12px;
@@ -345,6 +353,40 @@ a {
   font-size: 1.05rem;
   font-weight: 600;
   color: #4d3521;
+}
+
+.recordingInfoTooltipPhotoWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recordingInfoTooltipPhoto {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid #d9c4ae;
+  background: #fff;
+}
+
+.birdPhotoTooltip {
+  max-height: min(85vh, 560px);
+}
+
+.birdPhotoTooltipBody {
+  overflow-y: auto;
+}
+
+.birdPhotoTooltipImg {
+  max-height: min(48vh, 320px);
+}
+
+.recordingInfoTooltipPhotoCredit {
+  margin: 0 !important;
+  font-size: 0.72rem;
+  font-style: italic;
+  line-height: 1.35;
 }
 
 .recordingInfoTooltipMeta {

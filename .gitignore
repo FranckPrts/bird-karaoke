@@ -44,6 +44,9 @@ next-env.d.ts
 CLAUDE.md
 AGENTS.md
 
+# local tooling venvs
+/.venv-pdf/
+
 # audio (large binaries)
 *.wav
 !public/audio/**/*.wav

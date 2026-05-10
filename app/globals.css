@@ -679,6 +679,86 @@ a {
   font-weight: 700;
 }
 
+.scoreBreakdown {
+  margin-top: 14px;
+}
+
+.scoreBreakdownMathRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 14px;
+  margin-top: 12px;
+}
+
+.scoreBreakdownStrategyChip {
+  flex-shrink: 0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid #c9b49a;
+  background: #f0e6db;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #5a432f;
+  white-space: nowrap;
+}
+
+.scoreBreakdownMath {
+  margin: 0;
+  flex: 1 1 220px;
+  min-width: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.scoreBreakdownPolicyWeight {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 0.92em;
+  font-variant-numeric: tabular-nums;
+  color: #6b3f24;
+}
+
+.scoreBreakdownTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  border: 1px solid #c6a888;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #faf5ef;
+}
+
+.scoreBreakdownTable th,
+.scoreBreakdownTable td {
+  padding: 6px 10px;
+  border-top: 1px solid #dcc9b5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.scoreBreakdownTable tr:first-child th,
+.scoreBreakdownTable tr:first-child td {
+  border-top: none;
+}
+
+.scoreBreakdownTable th {
+  width: 52%;
+  max-width: 12rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #5a432f;
+  background: #f0e4d4;
+}
+
+.scoreBreakdownTable td {
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: #3d2e22;
+}
+
 .legend {
   margin: 10px 0 8px;
   display: flex;

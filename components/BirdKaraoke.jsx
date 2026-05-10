@@ -748,7 +748,12 @@ export default function BirdKaraoke() {
               const userMask = buildUserMask(userFramesRef.current);
               const scoring = scoreMaskOverlapWithDifficulty(targetMask, userMask, scoringDifficultyId);
               setScore(scoring.score);
-              setResultMaskData({ targetMask, userMask, hasTarget: scoring.hasTarget });
+              setResultMaskData({
+                targetMask,
+                userMask,
+                hasTarget: scoring.hasTarget,
+                breakdown: scoring.breakdown,
+              });
               if (selectedBird) {
                 const key = bestScoreKey(selectedBird.id, scoringDifficultyId);
                 setBests((prev) => ({ ...prev, [key]: Math.max(prev[key] || 0, scoring.score) }));
@@ -1320,6 +1325,51 @@ export default function BirdKaraoke() {
                     {activeScoringDifficulty.label} scoring ({activeScoringDifficulty.ratioLabel} coverage : off-mask)
                   </p>
                 </div>
+                {resultMaskData?.hasTarget && resultMaskData.breakdown && (
+                  <div className="scoreBreakdown">
+                    <table className="scoreBreakdownTable">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Matched target cells</th>
+                          <td>
+                            {resultMaskData.breakdown.intersection.toLocaleString()} of{" "}
+                            {resultMaskData.breakdown.targetPixels.toLocaleString()}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Your cells outside the target</th>
+                          <td>
+                            {resultMaskData.breakdown.userPixels === 0
+                              ? "0 (nothing detected)"
+                              : resultMaskData.breakdown.outsidePixels.toLocaleString()}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div className="scoreBreakdownMathRow">
+                      <div className="scoreBreakdownStrategyChip">
+                        Scoring: {activeScoringDifficulty.ratioLabel}
+                      </div>
+                      <p className="muted scoreBreakdownMath">
+                      100 × (
+                      <span className="scoreBreakdownPolicyWeight">{activeScoringDifficulty.wWithin}</span> ×{" "}
+                      {resultMaskData.breakdown.intersection.toLocaleString()}/
+                      {resultMaskData.breakdown.targetPixels.toLocaleString()} +{" "}
+                      <span className="scoreBreakdownPolicyWeight">{activeScoringDifficulty.wOff}</span> ×{" "}
+                      {resultMaskData.breakdown.userPixels === 0 ? (
+                        <>0</>
+                      ) : (
+                        <>
+                          (1 − {resultMaskData.breakdown.outsidePixels.toLocaleString()}/
+                          {resultMaskData.breakdown.userPixels.toLocaleString()})
+                        </>
+                      )}
+                      ) = {(resultMaskData.breakdown.coveragePoints + resultMaskData.breakdown.offMaskPoints).toFixed(1)}{" "}
+                      → {score}
+                      </p>
+                    </div>
+                  </div>
+                )}
                 <div className="legend">
                   <span>Teal: target notes</span>
                   <span>Red: your voice blobs</span>

@@ -3,6 +3,7 @@
     "id": "robin",
     "name": "American Robin",
     "silhouette": "/silhouette/american-robin.svg",
+    "photo": "/photos/robin.jpeg",
     "recordings": [
       {
         "id": "robin-local-01",
@@ -42,6 +43,7 @@
     "id": "chickadee",
     "name": "Black-capped Chickadee",
     "silhouette": "/silhouette/black-capped-chickadee.svg",
+    "photo": "/photos/chickadee.jpeg",
     "recordings": [
       {
         "id": "chickadee-local-01",
@@ -65,6 +67,7 @@
     "id": "thrush",
     "name": "Wood Thrush",
     "silhouette": "/silhouette/wood-thrush.svg",
+    "photo": "/photos/thrush.jpeg",
     "recordings": [
       {
         "id": "thrush-xeno-01",
@@ -88,6 +91,7 @@
     "id": "cardinal",
     "name": "Northern Cardinal",
     "silhouette": "/silhouette/northern-cardinal.svg",
+    "photo": "/photos/cardinal.jpeg",
     "recordings": [
       {
         "id": "cardinal-xeno-01",
@@ -132,6 +136,7 @@
     "id": "oriole",
     "name": "Baltimore Oriole",
     "silhouette": "/silhouette/baltimore-oriole.svg",
+    "photo": "/photos/oriole.jpeg",
     "recordings": [
       {
         "id": "oriole-xeno-01",
@@ -174,11 +179,1442 @@
     "id": "sparrow",
     "name": "White-throated Sparrow",
     "silhouette": "/silhouette/white-throated-sparrow.svg",
+    "photo": "/photos/sparrow.jpeg",
     "recordings": [
       {
         "id": "sparrow-xeno-01",
         "difficulty": "Easy",
         "query": "White-throated Sparrow type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "carolina-wren",
+    "name": "Carolina Wren",
+    "silhouette": null,
+    "photo": "/photos/carolina-wren.jpeg",
+    "recordings": [
+      {
+        "id": "carolina-wren-xeno-01",
+        "difficulty": "Medium",
+        "query": "Carolina Wren type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "house-wren",
+    "name": "House Wren",
+    "silhouette": null,
+    "photo": "/photos/house-wren.jpeg",
+    "recordings": [
+      {
+        "id": "house-wren-xeno-01",
+        "difficulty": "Medium",
+        "query": "House Wren type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "common-grackle",
+    "name": "Common Grackle",
+    "silhouette": null,
+    "photo": "/photos/common-grackle.jpeg",
+    "recordings": [
+      {
+        "id": "common-grackle-xeno-01",
+        "difficulty": "Medium",
+        "query": "Common Grackle type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "red-winged-blackbird",
+    "name": "Red-winged Blackbird",
+    "silhouette": null,
+    "photo": "/photos/red-winged-blackbird.jpeg",
+    "recordings": [
+      {
+        "id": "red-winged-blackbird-xeno-01",
+        "difficulty": "Medium",
+        "query": "Red-winged Blackbird type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "european-starling",
+    "name": "European Starling",
+    "silhouette": null,
+    "photo": "/photos/european-starling.jpeg",
+    "recordings": [
+      {
+        "id": "european-starling-xeno-01",
+        "difficulty": "Medium",
+        "query": "European Starling type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "brown-headed-cowbird",
+    "name": "Brown-headed Cowbird",
+    "silhouette": null,
+    "photo": "/photos/brown-headed-cowbird.jpeg",
+    "recordings": [
+      {
+        "id": "brown-headed-cowbird-xeno-01",
+        "difficulty": "Medium",
+        "query": "Brown-headed Cowbird type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "chipping-sparrow",
+    "name": "Chipping Sparrow",
+    "silhouette": null,
+    "photo": "/photos/chipping-sparrow.jpeg",
+    "recordings": [
+      {
+        "id": "chipping-sparrow-xeno-01",
+        "difficulty": "Medium",
+        "query": "Chipping Sparrow type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "song-sparrow",
+    "name": "Song Sparrow",
+    "silhouette": null,
+    "photo": "/photos/song-sparrow.jpeg",
+    "recordings": [
+      {
+        "id": "song-sparrow-xeno-01",
+        "difficulty": "Medium",
+        "query": "Song Sparrow type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "dark-eyed-junco",
+    "name": "Dark-eyed Junco",
+    "silhouette": null,
+    "photo": "/photos/dark-eyed-junco.jpeg",
+    "recordings": [
+      {
+        "id": "dark-eyed-junco-xeno-01",
+        "difficulty": "Medium",
+        "query": "Dark-eyed Junco type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "house-sparrow",
+    "name": "House Sparrow",
+    "silhouette": null,
+    "photo": "/photos/house-sparrow.jpeg",
+    "recordings": [
+      {
+        "id": "house-sparrow-xeno-01",
+        "difficulty": "Medium",
+        "query": "House Sparrow type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "ovenbird",
+    "name": "Ovenbird",
+    "silhouette": null,
+    "photo": "/photos/ovenbird.jpeg",
+    "recordings": [
+      {
+        "id": "ovenbird-xeno-01",
+        "difficulty": "Medium",
+        "query": "Ovenbird type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "hermit-thrush",
+    "name": "Hermit Thrush",
+    "silhouette": null,
+    "photo": "/photos/hermit-thrush.jpeg",
+    "recordings": [
+      {
+        "id": "hermit-thrush-xeno-01",
+        "difficulty": "Medium",
+        "query": "Hermit Thrush type:song q:A len:3-7",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "swainsons-thrush",
+    "name": "Swainson's Thrush",
+    "silhouette": null,
+    "photo": "/photos/swainsons-thrush.jpeg",
+    "recordings": [
+      {
+        "id": "swainsons-thrush-xeno-01",
+        "difficulty": "Medium",
+        "query": "Swainson's Thrush type:song q:A len:3-7",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "veery",
+    "name": "Veery",
+    "silhouette": null,
+    "photo": "/photos/veery.jpeg",
+    "recordings": [
+      {
+        "id": "veery-xeno-01",
+        "difficulty": "Medium",
+        "query": "Veery type:song q:A len:3-7",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "scarlet-tanager",
+    "name": "Scarlet Tanager",
+    "silhouette": null,
+    "photo": "/photos/scarlet-tanager.jpeg",
+    "recordings": [
+      {
+        "id": "scarlet-tanager-xeno-01",
+        "difficulty": "Medium",
+        "query": "Scarlet Tanager type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "blue-jay",
+    "name": "Blue Jay",
+    "silhouette": null,
+    "photo": "/photos/blue-jay.jpeg",
+    "recordings": [
+      {
+        "id": "blue-jay-xeno-01",
+        "difficulty": "Medium",
+        "query": "Blue Jay type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "american-goldfinch",
+    "name": "American Goldfinch",
+    "silhouette": null,
+    "photo": "/photos/american-goldfinch.jpeg",
+    "recordings": [
+      {
+        "id": "american-goldfinch-xeno-01",
+        "difficulty": "Medium",
+        "query": "American Goldfinch type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "gray-catbird",
+    "name": "Gray Catbird",
+    "silhouette": null,
+    "photo": "/photos/gray-catbird.jpeg",
+    "recordings": [
+      {
+        "id": "gray-catbird-xeno-01",
+        "difficulty": "Medium",
+        "query": "Gray Catbird type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "northern-mockingbird",
+    "name": "Northern Mockingbird",
+    "silhouette": null,
+    "photo": "/photos/northern-mockingbird.jpeg",
+    "recordings": [
+      {
+        "id": "northern-mockingbird-xeno-01",
+        "difficulty": "Medium",
+        "query": "Northern Mockingbird type:song q:A len:2-7",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "tufted-titmouse",
+    "name": "Tufted Titmouse",
+    "silhouette": null,
+    "photo": "/photos/tufted-titmouse.jpeg",
+    "recordings": [
+      {
+        "id": "tufted-titmouse-xeno-01",
+        "difficulty": "Medium",
+        "query": "Tufted Titmouse type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "mourning-dove",
+    "name": "Mourning Dove",
+    "silhouette": null,
+    "photo": "/photos/mourning-dove.jpeg",
+    "recordings": [
+      {
+        "id": "mourning-dove-xeno-01",
+        "difficulty": "Medium",
+        "query": "Mourning Dove type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "northern-flicker",
+    "name": "Northern Flicker",
+    "silhouette": null,
+    "photo": "/photos/northern-flicker.jpeg",
+    "recordings": [
+      {
+        "id": "northern-flicker-xeno-01",
+        "difficulty": "Medium",
+        "query": "Northern Flicker type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "yellow-bellied-sapsucker",
+    "name": "Yellow-bellied Sapsucker",
+    "silhouette": null,
+    "photo": "/photos/yellow-bellied-sapsucker.jpeg",
+    "recordings": [
+      {
+        "id": "yellow-bellied-sapsucker-xeno-01",
+        "difficulty": "Medium",
+        "query": "Yellow-bellied Sapsucker type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "red-bellied-woodpecker",
+    "name": "Red-bellied Woodpecker",
+    "silhouette": null,
+    "photo": "/photos/red-bellied-woodpecker.jpeg",
+    "recordings": [
+      {
+        "id": "red-bellied-woodpecker-xeno-01",
+        "difficulty": "Medium",
+        "query": "Red-bellied Woodpecker type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "downy-woodpecker",
+    "name": "Downy Woodpecker",
+    "silhouette": null,
+    "photo": "/photos/downy-woodpecker.jpeg",
+    "recordings": [
+      {
+        "id": "downy-woodpecker-xeno-01",
+        "difficulty": "Medium",
+        "query": "Downy Woodpecker type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "hairy-woodpecker",
+    "name": "Hairy Woodpecker",
+    "silhouette": null,
+    "photo": "/photos/hairy-woodpecker.jpeg",
+    "recordings": [
+      {
+        "id": "hairy-woodpecker-xeno-01",
+        "difficulty": "Medium",
+        "query": "Hairy Woodpecker type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "black-crowned-night-heron",
+    "name": "Black-crowned Night Heron",
+    "silhouette": null,
+    "photo": "/photos/black-crowned-night-heron.jpeg",
+    "recordings": [
+      {
+        "id": "black-crowned-night-heron-xeno-01",
+        "difficulty": "Medium",
+        "query": "Black-crowned Night Heron type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "green-heron",
+    "name": "Green Heron",
+    "silhouette": null,
+    "photo": "/photos/green-heron.jpeg",
+    "recordings": [
+      {
+        "id": "green-heron-xeno-01",
+        "difficulty": "Medium",
+        "query": "Green Heron type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "great-egret",
+    "name": "Great Egret",
+    "silhouette": null,
+    "photo": "/photos/great-egret.jpeg",
+    "recordings": [
+      {
+        "id": "great-egret-xeno-01",
+        "difficulty": "Medium",
+        "query": "Great Egret type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "great-blue-heron",
+    "name": "Great Blue Heron",
+    "silhouette": null,
+    "photo": "/photos/great-blue-heron.jpeg",
+    "recordings": [
+      {
+        "id": "great-blue-heron-xeno-01",
+        "difficulty": "Medium",
+        "query": "Great Blue Heron type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "double-crested-cormorant",
+    "name": "Double-crested Cormorant",
+    "silhouette": null,
+    "photo": "/photos/double-crested-cormorant.jpeg",
+    "recordings": [
+      {
+        "id": "double-crested-cormorant-xeno-01",
+        "difficulty": "Medium",
+        "query": "Double-crested Cormorant type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "canada-goose",
+    "name": "Canada Goose",
+    "silhouette": null,
+    "photo": "/photos/canada-goose.jpeg",
+    "recordings": [
+      {
+        "id": "canada-goose-xeno-01",
+        "difficulty": "Medium",
+        "query": "Canada Goose type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "brant",
+    "name": "Brant",
+    "silhouette": null,
+    "photo": "/photos/brant.jpeg",
+    "recordings": [
+      {
+        "id": "brant-xeno-01",
+        "difficulty": "Medium",
+        "query": "Brant type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "snow-goose",
+    "name": "Snow Goose",
+    "silhouette": null,
+    "photo": "/photos/snow-goose.jpeg",
+    "recordings": [
+      {
+        "id": "snow-goose-xeno-01",
+        "difficulty": "Medium",
+        "query": "Snow Goose type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "hooded-merganser",
+    "name": "Hooded Merganser",
+    "silhouette": null,
+    "photo": "/photos/hooded-merganser.jpeg",
+    "recordings": [
+      {
+        "id": "hooded-merganser-xeno-01",
+        "difficulty": "Medium",
+        "query": "Hooded Merganser type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "ruddy-duck",
+    "name": "Ruddy Duck",
+    "silhouette": null,
+    "photo": "/photos/ruddy-duck.jpeg",
+    "recordings": [
+      {
+        "id": "ruddy-duck-xeno-01",
+        "difficulty": "Medium",
+        "query": "Ruddy Duck type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "american-coot",
+    "name": "American Coot",
+    "silhouette": null,
+    "photo": "/photos/american-coot.jpeg",
+    "recordings": [
+      {
+        "id": "american-coot-xeno-01",
+        "difficulty": "Medium",
+        "query": "American Coot type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "red-breasted-merganser",
+    "name": "Red-breasted Merganser",
+    "silhouette": null,
+    "photo": "/photos/red-breasted-merganser.jpeg",
+    "recordings": [
+      {
+        "id": "red-breasted-merganser-xeno-01",
+        "difficulty": "Medium",
+        "query": "Red-breasted Merganser type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "northern-shoveler",
+    "name": "Northern Shoveler",
+    "silhouette": null,
+    "photo": "/photos/northern-shoveler.jpeg",
+    "recordings": [
+      {
+        "id": "northern-shoveler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Northern Shoveler type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "wood-duck",
+    "name": "Wood Duck",
+    "silhouette": null,
+    "photo": "/photos/wood-duck.jpeg",
+    "recordings": [
+      {
+        "id": "wood-duck-xeno-01",
+        "difficulty": "Medium",
+        "query": "Wood Duck type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "bufflehead",
+    "name": "Bufflehead",
+    "silhouette": null,
+    "photo": "/photos/bufflehead.jpeg",
+    "recordings": [
+      {
+        "id": "bufflehead-xeno-01",
+        "difficulty": "Medium",
+        "query": "Bufflehead type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "gadwall",
+    "name": "Gadwall",
+    "silhouette": null,
+    "photo": "/photos/gadwall.jpeg",
+    "recordings": [
+      {
+        "id": "gadwall-xeno-01",
+        "difficulty": "Medium",
+        "query": "Gadwall type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "mallard",
+    "name": "Mallard",
+    "silhouette": null,
+    "photo": "/photos/mallard.jpeg",
+    "recordings": [
+      {
+        "id": "mallard-xeno-01",
+        "difficulty": "Medium",
+        "query": "Mallard type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "american-black-duck",
+    "name": "American Black Duck",
+    "silhouette": null,
+    "photo": "/photos/american-black-duck.jpeg",
+    "recordings": [
+      {
+        "id": "american-black-duck-xeno-01",
+        "difficulty": "Medium",
+        "query": "American Black Duck type:call q:A len:2-8",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "pine-warbler",
+    "name": "Pine Warbler",
+    "silhouette": null,
+    "photo": "/photos/pine-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "pine-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Pine Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "palm-warbler",
+    "name": "Palm Warbler",
+    "silhouette": null,
+    "photo": "/photos/palm-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "palm-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Palm Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "blue-winged-warbler",
+    "name": "Blue-winged Warbler",
+    "silhouette": null,
+    "photo": "/photos/blue-winged-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "blue-winged-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Blue-winged Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "northern-parula",
+    "name": "Northern Parula",
+    "silhouette": null,
+    "photo": "/photos/northern-parula.jpeg",
+    "recordings": [
+      {
+        "id": "northern-parula-xeno-01",
+        "difficulty": "Medium",
+        "query": "Northern Parula type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "chestnut-sided-warbler",
+    "name": "Chestnut-sided Warbler",
+    "silhouette": null,
+    "photo": "/photos/chestnut-sided-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "chestnut-sided-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Chestnut-sided Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "hooded-warbler",
+    "name": "Hooded Warbler",
+    "silhouette": null,
+    "photo": "/photos/hooded-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "hooded-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Hooded Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "bay-breasted-warbler",
+    "name": "Bay-breasted Warbler",
+    "silhouette": null,
+    "photo": "/photos/bay-breasted-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "bay-breasted-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Bay-breasted Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "wilsons-warbler",
+    "name": "Wilson's Warbler",
+    "silhouette": null,
+    "photo": "/photos/wilsons-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "wilsons-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Wilson's Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "black-throated-blue-warbler",
+    "name": "Black-throated Blue Warbler",
+    "silhouette": null,
+    "photo": "/photos/black-throated-blue-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "black-throated-blue-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Black-throated Blue Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "common-yellowthroat",
+    "name": "Common Yellowthroat",
+    "silhouette": null,
+    "photo": "/photos/common-yellowthroat.jpeg",
+    "recordings": [
+      {
+        "id": "common-yellowthroat-xeno-01",
+        "difficulty": "Medium",
+        "query": "Common Yellowthroat type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "black-and-white-warbler",
+    "name": "Black-and-white Warbler",
+    "silhouette": null,
+    "photo": "/photos/black-and-white-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "black-and-white-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Black-and-white Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "blackburnian-warbler",
+    "name": "Blackburnian Warbler",
+    "silhouette": null,
+    "photo": "/photos/blackburnian-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "blackburnian-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Blackburnian Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "yellow-rumped-warbler",
+    "name": "Yellow-rumped Warbler",
+    "silhouette": null,
+    "photo": "/photos/yellow-rumped-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "yellow-rumped-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Yellow-rumped Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "canada-warbler",
+    "name": "Canada Warbler",
+    "silhouette": null,
+    "photo": "/photos/canada-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "canada-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Canada Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "magnolia-warbler",
+    "name": "Magnolia Warbler",
+    "silhouette": null,
+    "photo": "/photos/magnolia-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "magnolia-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Magnolia Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "prairie-warbler",
+    "name": "Prairie Warbler",
+    "silhouette": null,
+    "photo": "/photos/prairie-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "prairie-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Prairie Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "cape-may-warbler",
+    "name": "Cape May Warbler",
+    "silhouette": null,
+    "photo": "/photos/cape-may-warbler.jpeg",
+    "recordings": [
+      {
+        "id": "cape-may-warbler-xeno-01",
+        "difficulty": "Medium",
+        "query": "Cape May Warbler type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "red-eyed-vireo",
+    "name": "Red-eyed Vireo",
+    "silhouette": null,
+    "photo": "/photos/red-eyed-vireo.jpeg",
+    "recordings": [
+      {
+        "id": "red-eyed-vireo-xeno-01",
+        "difficulty": "Medium",
+        "query": "Red-eyed Vireo type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "warbling-vireo",
+    "name": "Warbling Vireo",
+    "silhouette": null,
+    "photo": "/photos/warbling-vireo.jpeg",
+    "recordings": [
+      {
+        "id": "warbling-vireo-xeno-01",
+        "difficulty": "Medium",
+        "query": "Warbling Vireo type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "blue-headed-vireo",
+    "name": "Blue-headed Vireo",
+    "silhouette": null,
+    "photo": "/photos/blue-headed-vireo.jpeg",
+    "recordings": [
+      {
+        "id": "blue-headed-vireo-xeno-01",
+        "difficulty": "Medium",
+        "query": "Blue-headed Vireo type:song q:A len:2-6",
+        "source": {
+          "provider": "xeno-canto",
+          "location": null,
+          "recordist": null,
+          "license": null,
+          "url": "https://xeno-canto.org",
+          "capturedAt": null,
+          "xenoCantoId": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "yellow-throated-vireo",
+    "name": "Yellow-throated Vireo",
+    "silhouette": null,
+    "photo": "/photos/yellow-throated-vireo.jpeg",
+    "recordings": [
+      {
+        "id": "yellow-throated-vireo-xeno-01",
+        "difficulty": "Medium",
+        "query": "Yellow-throated Vireo type:song q:A len:2-6",
         "source": {
           "provider": "xeno-canto",
           "location": null,
